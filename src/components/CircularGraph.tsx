@@ -326,6 +326,8 @@ export function CircularGraph({
 
     function handleTouchStart(e: TouchEvent) {
       const target = e.target as Element;
+      // Don't intercept touches on overlay UI panels (layers, scenarios)
+      if (!target.closest('svg')) return;
       if (target.tagName === 'circle' || target.closest('[data-interactive]')) return;
 
       if (e.touches.length === 1) {
