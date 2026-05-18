@@ -302,6 +302,113 @@ export function CircularGraph({
     isPanning.current = false;
   }, []);
 
+  // Touch zoom/pan
+  const touchState = useRef<{
+    startDist: number;
+    startScale: number;
+    startMid: { x: number; y: number };
+    startTransform: { x: number; y: number };
+  } | null>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    function getTouchDist(t1: Touch, t2: Touch): number {
+      const dx = t1.clientX - t2.clientX;
+      const dy = t1.clientY - t2.clientY;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    function getTouchMid(t1: Touch, t2: Touch): { x: number; y: number } {
+      return { x: (t1.clientX + t2.clientX) / 2, y: (t1.clientY + t2.clientY) / 2 };
+    }
+
+    function handleTouchStart(e: TouchEvent) {
+      const target = e.target as Element;
+      if (target.tagName === 'circle' || target.closest('[data-interactive]')) return;
+
+      if (e.touches.length === 1) {
+        // Single finger — start pan (cancel any pinch state)
+        touchState.current = null;
+        isPanning.current = true;
+        panStart.current = {
+          x: e.touches[0].clientX - transform.x,
+          y: e.touches[0].clientY - transform.y,
+        };
+        e.preventDefault();
+      } else if (e.touches.length === 2) {
+        // Two fingers — start pinch (cancel any pan)
+        isPanning.current = false;
+        touchState.current = {
+          startDist: getTouchDist(e.touches[0], e.touches[1]),
+          startScale: transform.scale,
+          startMid: getTouchMid(e.touches[0], e.touches[1]),
+          startTransform: { x: transform.x, y: transform.y },
+        };
+        e.preventDefault();
+      }
+    }
+
+    function handleTouchMove(e: TouchEvent) {
+      if (e.touches.length === 1 && isPanning.current) {
+        // Single finger pan
+        const newX = e.touches[0].clientX - panStart.current.x;
+        const newY = e.touches[0].clientY - panStart.current.y;
+        setTransform(prev => ({ ...prev, x: newX, y: newY }));
+        e.preventDefault();
+      } else if (e.touches.length === 2 && touchState.current) {
+        // Pinch zoom + pan
+        const ts = touchState.current;
+        const newDist = getTouchDist(e.touches[0], e.touches[1]);
+        const ratio = newDist / ts.startDist;
+        const newScale = Math.min(5, Math.max(0.3, ts.startScale * ratio));
+
+        const newMid = getTouchMid(e.touches[0], e.touches[1]);
+        const panDx = newMid.x - ts.startMid.x;
+        const panDy = newMid.y - ts.startMid.y;
+
+        setTransform({
+          scale: newScale,
+          x: ts.startTransform.x + panDx,
+          y: ts.startTransform.y + panDy,
+        });
+        e.preventDefault();
+      }
+    }
+
+    function handleTouchEnd(e: TouchEvent) {
+      if (e.touches.length < 2) {
+        touchState.current = null;
+      }
+      if (e.touches.length === 0) {
+        isPanning.current = false;
+      }
+      // If going from 2 → 1 finger, start a fresh pan from the remaining finger
+      if (e.touches.length === 1) {
+        isPanning.current = true;
+        setTransform(prev => {
+          panStart.current = {
+            x: e.touches[0].clientX - prev.x,
+            y: e.touches[0].clientY - prev.y,
+          };
+          return prev;
+        });
+      }
+    }
+
+    container.addEventListener('touchstart', handleTouchStart, { passive: false });
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    container.addEventListener('touchend', handleTouchEnd, { passive: false });
+    container.addEventListener('touchcancel', handleTouchEnd, { passive: false });
+    return () => {
+      container.removeEventListener('touchstart', handleTouchStart);
+      container.removeEventListener('touchmove', handleTouchMove);
+      container.removeEventListener('touchend', handleTouchEnd);
+      container.removeEventListener('touchcancel', handleTouchEnd);
+    };
+  }, [transform]);
+
   // Node positions
   const vdPositions = useMemo((): NodePosition[] => {
     const vds = Array.from(network.valueDrivers.entries());
@@ -494,6 +601,7 @@ export function CircularGraph({
     overflow: 'hidden',
     backgroundColor: BG_COLOR,
     cursor: isPanning.current ? 'grabbing' : 'grab',
+    touchAction: 'none',
   };
 
   const svgTransform = `translate(${transform.x}, ${transform.y}) scale(${transform.scale})`;
