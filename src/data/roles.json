@@ -1,0 +1,20 @@
+[
+  { "id": "metallurgist", "name": "Plant metallurgist", "department": "Processing", "tasks": ["M1","M2","M3","M4","M5","M6","M7"] },
+  { "id": "controlRoom", "name": "Control room operator", "department": "Processing", "tasks": ["CR1","CR2","CR3","CR4","CR5","CR6"] },
+  { "id": "procSupervisor", "name": "Processing supervisor", "department": "Processing", "tasks": ["PS1","PS2","PS3","PS4","PS5","PS6","PS7"] },
+  { "id": "gradeGeologist", "name": "Grade control geologist", "department": "Geology", "tasks": ["J1","J2","J3","J4","J5","J6","J7"] },
+  { "id": "resourceGeologist", "name": "Resource geologist", "department": "Geology", "tasks": ["RG1","RG2","RG3","RG4","RG5","RG6","RG7"] },
+  { "id": "planner", "name": "Short-range planner", "department": "Mine planning+ops", "tasks": ["MP1","MP2","MP3","MP4","MP5","MP6","MP7"] },
+  { "id": "dispatcher", "name": "Dispatcher", "department": "Mine planning+ops", "tasks": ["D1","D2","D3","D4","D5","D6","D7"] },
+  { "id": "mineSupervisor", "name": "Mine ops supervisor", "department": "Mine planning+ops", "tasks": ["MS1","MS2","MS3","MS4","MS5","MS6","MS7"] },
+  { "id": "mainPlanner", "name": "Maintenance planner", "department": "Maintenance", "tasks": ["P1","P2","P3","P4","P5","P6","P7"] },
+  { "id": "conditionAnalyst", "name": "Condition monitoring analyst", "department": "Maintenance", "tasks": ["T1","T2","T3","T4","T5","T6","T7"] },
+  { "id": "reliabilityEng", "name": "Reliability engineer", "department": "Maintenance", "tasks": ["RE1","RE2","RE3","RE4","RE5","RE6","RE7"] },
+  { "id": "fpAnalyst", "name": "FP&A analyst", "department": "Finance", "tasks": ["S1","S2","S3","S4","S5","S6","S7"] },
+  { "id": "capitalEval", "name": "Capital project evaluator", "department": "Finance", "tasks": ["CE1","CE2","CE3","CE4","CE5","CE6"] },
+  { "id": "safetyOfficer", "name": "Mine safety officer", "department": "Support", "tasks": ["SO1","SO2","SO3","SO4","SO5","SO6"] },
+  { "id": "itLead", "name": "IT/data lead", "department": "Support", "tasks": ["I1","I2","I3","I4","I5"] },
+  { "id": "procurement", "name": "Procurement officer", "department": "Support", "tasks": ["R1","R2","R3","R4","R5"] },
+  { "id": "hrPartner", "name": "HR business partner", "department": "Support", "tasks": ["H1","H2","H3","H4"] },
+  { "id": "coo", "name": "COO", "department": "Support", "tasks": ["COO1","COO2","COO3","COO4","COO5","COO6"] }
+]

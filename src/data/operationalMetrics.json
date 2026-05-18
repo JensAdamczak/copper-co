@@ -1,0 +1,82 @@
+[
+  {
+    "id": "OM1",
+    "name": "SAG mill availability",
+    "unit": "%",
+    "baseline": 92.0,
+    "noiseSigma": 0.5,
+    "parents": [
+      { "capabilityId": "C4", "weight": 30.0 },
+      { "capabilityId": "C3", "weight": 12.0 },
+      { "capabilityId": "C6", "weight": 8.0 },
+      { "capabilityId": "C10", "weight": 6.0 }
+    ]
+  },
+  {
+    "id": "OM2",
+    "name": "Grade control RMSE",
+    "unit": "% Cu",
+    "baseline": 0.06,
+    "noiseSigma": 0.002,
+    "parents": [
+      { "capabilityId": "C2", "weight": -0.25 },
+      { "capabilityId": "C3", "weight": -0.10 },
+      { "capabilityId": "C6", "weight": -0.08 }
+    ]
+  },
+  {
+    "id": "OM3",
+    "name": "Flotation recovery variability",
+    "unit": "% σ",
+    "baseline": 3.0,
+    "noiseSigma": 0.2,
+    "parents": [
+      { "capabilityId": "C1", "weight": -12.0 },
+      { "capabilityId": "C6", "weight": -4.0 },
+      { "capabilityId": "C10", "weight": -3.0 }
+    ]
+  },
+  {
+    "id": "OM4",
+    "name": "Fleet availability",
+    "unit": "%",
+    "baseline": 85.0,
+    "noiseSigma": 0.8,
+    "parents": [
+      { "capabilityId": "C5", "weight": 40.0 },
+      { "capabilityId": "C6", "weight": 8.0 },
+      { "capabilityId": "C10", "weight": 6.0 }
+    ]
+  },
+  {
+    "id": "OM5",
+    "name": "Forecast accuracy RMSE",
+    "unit": "%",
+    "baseline": 12.0,
+    "noiseSigma": 0.5,
+    "parents": [
+      { "capabilityId": "C7", "weight": -30.0 },
+      { "capabilityId": "C6", "weight": -10.0 }
+    ]
+  },
+  {
+    "id": "OM6",
+    "name": "Spares fill rate",
+    "unit": "%",
+    "baseline": 88.0,
+    "noiseSigma": 0.5,
+    "parents": [
+      { "capabilityId": "C8", "weight": 40.0 }
+    ]
+  },
+  {
+    "id": "OM7",
+    "name": "Compliance index",
+    "unit": "%",
+    "baseline": 95.0,
+    "noiseSigma": 0.3,
+    "parents": [
+      { "capabilityId": "C9", "weight": 25.0 }
+    ]
+  }
+]

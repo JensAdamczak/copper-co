@@ -1,0 +1,73 @@
+[
+  {
+    "id": "VD1",
+    "name": "Throughput",
+    "baseValue": 15.0,
+    "unit": "Mtpa",
+    "noiseSigma": 0.05,
+    "parents": [
+      { "omId": "OM1", "weight": 0.10 },
+      { "omId": "OM7", "weight": 0.02 }
+    ]
+  },
+  {
+    "id": "VD2",
+    "name": "Head grade",
+    "baseValue": 0.525,
+    "unit": "% Cu",
+    "noiseSigma": 0.002,
+    "parents": [
+      { "omId": "OM2", "weight": -1.5 }
+    ]
+  },
+  {
+    "id": "VD3",
+    "name": "Recovery",
+    "baseValue": 88.0,
+    "unit": "%",
+    "noiseSigma": 0.3,
+    "parents": [
+      { "omId": "OM3", "weight": -1.8 }
+    ]
+  },
+  {
+    "id": "VD4",
+    "name": "Mining cost",
+    "baseValue": 120.0,
+    "unit": "$M/yr",
+    "noiseSigma": 1.0,
+    "parents": [
+      { "omId": "OM4", "weight": -0.8 }
+    ]
+  },
+  {
+    "id": "VD5",
+    "name": "Processing cost",
+    "baseValue": 95.0,
+    "unit": "$M/yr",
+    "noiseSigma": 0.8,
+    "parents": [
+      { "omId": "OM1", "weight": -0.4 }
+    ]
+  },
+  {
+    "id": "VD6",
+    "name": "Maintenance cost",
+    "baseValue": 65.0,
+    "unit": "$M/yr",
+    "noiseSigma": 0.5,
+    "parents": [
+      { "omId": "OM6", "weight": -0.3 }
+    ]
+  },
+  {
+    "id": "VD7",
+    "name": "G&A + capex",
+    "baseValue": 90.0,
+    "unit": "$M/yr",
+    "noiseSigma": 0.8,
+    "parents": [
+      { "omId": "OM5", "weight": 1.2 }
+    ]
+  }
+]

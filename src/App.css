@@ -1,0 +1,70 @@
+/* Slider thumb styling (cannot be done with inline styles) */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: var(--editor-slider-track);
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--editor-slider-fill);
+  cursor: pointer;
+  border: 2px solid var(--editor-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--editor-slider-fill);
+  cursor: pointer;
+  border: 2px solid var(--editor-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input[type='range']:hover::-webkit-slider-thumb {
+  background: var(--editor-text-secondary);
+}
+
+input[type='range']:hover::-moz-range-thumb {
+  background: var(--editor-text-secondary);
+}
+
+/* Compact slider for ScenarioPanel */
+input[type='range'].sp-slider {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+input[type='range'].sp-slider::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  background: #e5e5e5;
+  border: none;
+  box-shadow: none;
+  margin-top: -4px;
+}
+
+input[type='range'].sp-slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #e5e5e5;
+  border: none;
+  box-shadow: none;
+}
+
+input[type='range'].sp-slider:hover::-webkit-slider-thumb {
+  background: #fff;
+}
+
+input[type='range'].sp-slider:hover::-moz-range-thumb {
+  background: #fff;
+}

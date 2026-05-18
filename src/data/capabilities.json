@@ -1,0 +1,122 @@
+[
+  {
+    "id": "C1",
+    "name": "Flotation optimization",
+    "type": "value",
+    "baselineCapacity": 0.12,
+    "idealCapacity": 0.13,
+    "baselineNoiseSigma": 0.12,
+    "idealNoiseSigma": 0.04,
+    "aggregatedTasks": ["M1", "M2", "CR1", "CR2", "PS1"]
+  },
+  {
+    "id": "C2",
+    "name": "Grade control",
+    "type": "value",
+    "baselineCapacity": 0.10,
+    "idealCapacity": 0.11,
+    "baselineNoiseSigma": 0.10,
+    "idealNoiseSigma": 0.05,
+    "aggregatedTasks": ["RG1", "RG2", "J1", "J2"]
+  },
+  {
+    "id": "C3",
+    "name": "Mine planning & dispatch",
+    "type": "value",
+    "baselineCapacity": 0.10,
+    "idealCapacity": 0.11,
+    "baselineNoiseSigma": 0.08,
+    "idealNoiseSigma": 0.04,
+    "aggregatedTasks": ["MP1", "MP2", "D1", "D2"]
+  },
+  {
+    "id": "C4",
+    "name": "Constraint maintenance",
+    "type": "value",
+    "baselineCapacity": 0.12,
+    "idealCapacity": 0.13,
+    "baselineNoiseSigma": 0.10,
+    "idealNoiseSigma": 0.04,
+    "aggregatedTasks": ["P1", "P2", "T1", "T2"]
+  },
+  {
+    "id": "C5",
+    "name": "Fleet maintenance",
+    "type": "value",
+    "baselineCapacity": 0.08,
+    "idealCapacity": 0.09,
+    "baselineNoiseSigma": 0.08,
+    "idealNoiseSigma": 0.04,
+    "aggregatedTasks": ["F1", "F2", "F3"]
+  },
+  {
+    "id": "C6",
+    "name": "Information infrastructure",
+    "type": "value",
+    "baselineCapacity": 0.08,
+    "idealCapacity": 0.09,
+    "baselineNoiseSigma": 0.10,
+    "idealNoiseSigma": 0.04,
+    "aggregatedTasks": ["I1", "I2", "I3", "I4"]
+  },
+  {
+    "id": "C7",
+    "name": "Financial planning",
+    "type": "value",
+    "baselineCapacity": 0.06,
+    "idealCapacity": 0.07,
+    "baselineNoiseSigma": 0.10,
+    "idealNoiseSigma": 0.05,
+    "aggregatedTasks": ["CE1", "CE2", "CE3"]
+  },
+  {
+    "id": "C8",
+    "name": "Supply chain",
+    "type": "value",
+    "baselineCapacity": 0.06,
+    "idealCapacity": 0.07,
+    "baselineNoiseSigma": 0.08,
+    "idealNoiseSigma": 0.04,
+    "aggregatedTasks": ["SC1", "SC2", "SC3"]
+  },
+  {
+    "id": "C9",
+    "name": "Safety & compliance",
+    "type": "supporting",
+    "baselineCapacity": 0.06,
+    "idealCapacity": 0.06,
+    "baselineNoiseSigma": 0.06,
+    "idealNoiseSigma": 0.03,
+    "aggregatedTasks": ["S1", "S2", "RE1"]
+  },
+  {
+    "id": "C10",
+    "name": "Workforce development",
+    "type": "supporting",
+    "baselineCapacity": 0.06,
+    "idealCapacity": 0.06,
+    "baselineNoiseSigma": 0.08,
+    "idealNoiseSigma": 0.04,
+    "aggregatedTasks": ["HR1", "HR2", "TR1"]
+  },
+  {
+    "id": "C11",
+    "name": "Coordination overhead",
+    "type": "coordination",
+    "baselineCapacity": 0.10,
+    "idealCapacity": 0.05,
+    "baselineNoiseSigma": 0.05,
+    "idealNoiseSigma": 0.05,
+    "aggregatedTasks": ["M3", "CR3", "J3", "MP3", "D3"]
+  },
+  {
+    "id": "C12",
+    "name": "Local optimization",
+    "type": "local",
+    "baselineCapacity": 0.06,
+    "idealCapacity": 0.03,
+    "baselineNoiseSigma": 0.05,
+    "idealNoiseSigma": 0.05,
+    "aggregatedTasks": ["L1", "L2", "L3"]
+  }
+]
