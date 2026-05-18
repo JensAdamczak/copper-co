@@ -120,14 +120,14 @@ export function CircularNPVView() {
   const [overrides, setOverrides] = useState<Map<string, Partial<CapabilityParams>>>(new Map());
   const [scenarioHighlight, setScenarioHighlight] = useState<Set<string>>(new Set());
   const [inferenceHighlight, setInferenceHighlight] = useState<Set<string>>(new Set());
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
 
   // New state for scenario panel
   const [activeScenarioId, setActiveScenarioId] = useState<string | null>(null);
   const [customScenarios, setCustomScenarios] = useState<Scenario[]>([]);
   const [customScenarioAdjustments, setCustomScenarioAdjustments] = useState<Map<string, BuilderAdjustment[]>>(new Map());
-  const [panelMode, setPanelMode] = useState<'info' | 'builder' | 'saved' | 'about'>('builder');
+  const [panelMode, setPanelMode] = useState<'info' | 'builder' | 'saved' | 'about'>('about');
   const [builderAdjustments, setBuilderAdjustments] = useState<BuilderAdjustment[]>([]);
   const [builderName, setBuilderName] = useState('');
 
