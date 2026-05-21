@@ -492,6 +492,15 @@ function BuilderTab({ network, builderAdjustments, builderName, onSetBuilderName
     }
   };
 
+  // When capability selection changes, set slider to baseline for current param
+  const handleCapChange = (capId: string) => {
+    setSelectedCap(capId);
+    if (capId) {
+      const cap = network.capabilities.get(capId);
+      if (cap) setParamValue(selectedParam === 'capacity' ? cap.baselineCapacity : cap.baselineNoiseSigma);
+    }
+  };
+
   const canAdd = layer === 'capability' ? !!selectedCap
     : layer === 'om' ? !!selectedOM
     : !!selectedVD;
@@ -563,7 +572,7 @@ function BuilderTab({ network, builderAdjustments, builderName, onSetBuilderName
             <select
               style={{ ...styles.select, marginBottom: '6px' }}
               value={selectedCap}
-              onChange={(e) => setSelectedCap(e.target.value)}
+              onChange={(e) => handleCapChange(e.target.value)}
             >
               <option value="" disabled>Select capability...</option>
               {caps.map(([id, cap]) => (
@@ -571,43 +580,47 @@ function BuilderTab({ network, builderAdjustments, builderName, onSetBuilderName
               ))}
             </select>
 
-            <div style={{ display: 'flex', gap: '6px', marginBottom: '6px' }}>
-              <label style={{ fontSize: '10px', color: 'rgba(255,255,255,0.6)', display: 'flex', alignItems: 'center', gap: '3px', cursor: 'pointer' }}>
-                <input
-                  type="radio"
-                  name="param"
-                  checked={selectedParam === 'capacity'}
-                  onChange={() => { setSelectedParam('capacity'); setParamValue(0.10); }}
-                />
-                capacity
-              </label>
-              <label style={{ fontSize: '10px', color: 'rgba(255,255,255,0.6)', display: 'flex', alignItems: 'center', gap: '3px', cursor: 'pointer' }}>
-                <input
-                  type="radio"
-                  name="param"
-                  checked={selectedParam === 'noiseSigma'}
-                  onChange={() => { setSelectedParam('noiseSigma'); setParamValue(0.05); }}
-                />
-                noise σ
-              </label>
-            </div>
+            {selectedCap && (
+              <>
+                <div style={{ display: 'flex', gap: '6px', marginBottom: '6px' }}>
+                  <label style={{ fontSize: '10px', color: 'rgba(255,255,255,0.6)', display: 'flex', alignItems: 'center', gap: '3px', cursor: 'pointer' }}>
+                    <input
+                      type="radio"
+                      name="param"
+                      checked={selectedParam === 'capacity'}
+                      onChange={() => { setSelectedParam('capacity'); setParamValue(0.10); }}
+                    />
+                    capacity
+                  </label>
+                  <label style={{ fontSize: '10px', color: 'rgba(255,255,255,0.6)', display: 'flex', alignItems: 'center', gap: '3px', cursor: 'pointer' }}>
+                    <input
+                      type="radio"
+                      name="param"
+                      checked={selectedParam === 'noiseSigma'}
+                      onChange={() => { setSelectedParam('noiseSigma'); setParamValue(0.05); }}
+                    />
+                    noise σ
+                  </label>
+                </div>
 
-            <div style={styles.sliderRow}>
-              <span style={styles.sliderLabel as CSSProperties}>{selectedParam === 'capacity' ? 'cap' : 'σ'}</span>
-              <input
-                type="range"
-                className="sp-slider"
-                style={styles.slider}
-                min={selectedParam === 'capacity' ? 0.01 : 0.01}
-                max={selectedParam === 'capacity' ? 0.50 : 0.30}
-                step={0.01}
-                value={paramValue}
-                onChange={(e) => setParamValue(parseFloat(e.target.value))}
-              />
-              <span style={styles.sliderValue as CSSProperties}>
-                {selectedParam === 'capacity' ? `${(paramValue * 100).toFixed(0)}%` : paramValue.toFixed(2)}
-              </span>
-            </div>
+                <div style={styles.sliderRow}>
+                  <span style={styles.sliderLabel as CSSProperties}>{selectedParam === 'capacity' ? 'cap' : 'σ'}</span>
+                  <input
+                    type="range"
+                    className="sp-slider"
+                    style={styles.slider}
+                    min={selectedParam === 'capacity' ? 0.01 : 0.01}
+                    max={selectedParam === 'capacity' ? 0.50 : 0.30}
+                    step={0.01}
+                    value={paramValue}
+                    onChange={(e) => setParamValue(parseFloat(e.target.value))}
+                  />
+                  <span style={styles.sliderValue as CSSProperties}>
+                    {selectedParam === 'capacity' ? `${(paramValue * 100).toFixed(0)}%` : paramValue.toFixed(2)}
+                  </span>
+                </div>
+              </>
+            )}
           </>
         )}
 
