@@ -3,7 +3,7 @@ import type { Network, CapabilityParams, Scenario } from '../engine/types';
 import type { ScenarioOption } from '../components/NPVDisplay';
 import { loadNetwork } from '../engine/network';
 import { forwardPass } from '../engine/forward';
-import { computeSensitivities, type SensitivityResult } from '../engine/sensitivity';
+import { computeSensitivities } from '../engine/sensitivity';
 import { inferCapabilityOverrides, type Observation } from '../engine/inference';
 import { CircularGraph } from '../components/CircularGraph';
 import { ScenarioPanel } from '../components/ScenarioPanel';
