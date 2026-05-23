@@ -2,85 +2,100 @@
   {
     "id": "S1",
     "name": "Deploy ML flotation optimizer",
-    "description": "ML flotation optimizer reduces variability and improves recovery yield",
-    "npvImpact": "+$180M",
-    "highlightNodeIds": ["C1", "OM3", "VD3"],
+    "description": "ML flotation optimizer boosts recovery yield and reduces variability",
+    "npvImpact": "+$79M",
+    "highlightNodeIds": ["C1", "C14", "OM3", "VD3"],
     "parameterOverrides": [
-      { "nodeId": "C1", "param": "noiseSigma", "value": 0.04 }
+      { "nodeId": "C1",  "param": "capacity",   "value": 0.12 },
+      { "nodeId": "C1",  "param": "noiseSigma",  "value": 0.04 },
+      { "nodeId": "C14", "param": "capacity",   "value": 0.06 },
+      { "nodeId": "C14", "param": "noiseSigma",  "value": 0.04 },
+      { "nodeId": "C11", "param": "capacity",   "value": 0.04 }
     ]
   },
   {
     "id": "S2",
     "name": "Deploy ML grade estimation",
-    "description": "ML-assisted grade estimation reduces grade control RMSE",
-    "npvImpact": "+$40M",
+    "description": "ML-assisted grade estimation reduces grade control RMSE and lifts head grade",
+    "npvImpact": "+$57M",
     "highlightNodeIds": ["C2", "OM2", "VD2"],
     "parameterOverrides": [
-      { "nodeId": "C2", "param": "noiseSigma", "value": 0.05 }
+      { "nodeId": "C2",  "param": "capacity",   "value": 0.11 },
+      { "nodeId": "C2",  "param": "noiseSigma",  "value": 0.05 },
+      { "nodeId": "C11", "param": "capacity",   "value": 0.09 }
     ]
   },
   {
     "id": "S3",
     "name": "Add predictive maintenance",
-    "description": "Predictive maintenance improves SAG mill and fleet availability",
-    "npvImpact": "+$80M",
-    "highlightNodeIds": ["C4", "OM1", "VD1", "VD5"],
+    "description": "Predictive maintenance improves SAG mill and mobile fleet availability",
+    "npvImpact": "+$85M",
+    "highlightNodeIds": ["C4", "C5", "OM1", "OM4", "VD1", "VD4", "VD5"],
     "parameterOverrides": [
-      { "nodeId": "C4", "param": "capacity", "value": 0.15 },
-      { "nodeId": "C4", "param": "noiseSigma", "value": 0.05 },
-      { "nodeId": "C11", "param": "capacity", "value": 0.07 }
+      { "nodeId": "C4",  "param": "capacity",   "value": 0.18 },
+      { "nodeId": "C4",  "param": "noiseSigma",  "value": 0.04 },
+      { "nodeId": "C5",  "param": "capacity",   "value": 0.09 },
+      { "nodeId": "C5",  "param": "noiseSigma",  "value": 0.04 },
+      { "nodeId": "C11", "param": "capacity",   "value": 0.06 },
+      { "nodeId": "C12", "param": "capacity",   "value": 0.03 }
     ]
   },
   {
     "id": "S4",
     "name": "Build shared data platform",
     "description": "Shared data platform improves information flow across operations",
-    "npvImpact": "+$100M",
-    "highlightNodeIds": ["C6", "OM1", "OM2", "OM3", "OM4", "OM5", "VD1", "VD2", "VD3", "VD4", "VD5", "VD7"],
+    "npvImpact": "+$110M",
+    "highlightNodeIds": ["C6", "OM1", "OM2", "OM3", "OM4", "OM5", "OM8", "VD1", "VD2", "VD3", "VD4", "VD5", "VD7"],
     "parameterOverrides": [
-      { "nodeId": "C6", "param": "capacity", "value": 0.12 },
-      { "nodeId": "C6", "param": "noiseSigma", "value": 0.04 },
-      { "nodeId": "C11", "param": "capacity", "value": 0.06 }
+      { "nodeId": "C6",  "param": "capacity",   "value": 0.12 },
+      { "nodeId": "C6",  "param": "noiseSigma",  "value": 0.04 },
+      { "nodeId": "C11", "param": "capacity",   "value": 0.06 }
     ]
   },
   {
     "id": "S5",
     "name": "Adopt reference-class forecasting",
-    "description": "Reference-class forecasting reduces cost estimation error",
-    "npvImpact": "+$55M",
-    "highlightNodeIds": ["C7", "OM5", "VD7"],
+    "description": "Reference-class forecasting reduces cost estimation error and improves mine plan accuracy",
+    "npvImpact": "+$54M",
+    "highlightNodeIds": ["C3", "C7", "OM2", "OM5", "VD2", "VD7"],
     "parameterOverrides": [
-      { "nodeId": "C7", "param": "noiseSigma", "value": 0.05 },
-      { "nodeId": "C7", "param": "capacity", "value": 0.08 },
-      { "nodeId": "C11", "param": "capacity", "value": 0.08 }
+      { "nodeId": "C7",  "param": "capacity",   "value": 0.12 },
+      { "nodeId": "C7",  "param": "noiseSigma",  "value": 0.04 },
+      { "nodeId": "C3",  "param": "capacity",   "value": 0.07 },
+      { "nodeId": "C3",  "param": "noiseSigma",  "value": 0.04 },
+      { "nodeId": "C11", "param": "capacity",   "value": 0.02 }
     ]
   },
   {
     "id": "S6",
     "name": "Double local optimization spend",
-    "description": "Diagnostic: doubling local optimization capacity starves value capabilities",
-    "npvImpact": "-$71M",
-    "highlightNodeIds": ["C12"],
+    "description": "Diagnostic: doubling local overhead absorbs budget from high-value capabilities",
+    "npvImpact": "-$73M",
+    "highlightNodeIds": ["C1", "C4", "C12"],
     "parameterOverrides": [
-      { "nodeId": "C12", "param": "capacity", "value": 0.12 }
+      { "nodeId": "C12", "param": "capacity",   "value": 0.12 },
+      { "nodeId": "C4",  "param": "capacity",   "value": 0.09 },
+      { "nodeId": "C1",  "param": "capacity",   "value": 0.05 }
     ]
   },
   {
     "id": "S7",
     "name": "Increased coordination overhead",
-    "description": "Diagnostic: growing coordination overhead by 50% starves value capabilities",
-    "npvImpact": "-$62M",
-    "highlightNodeIds": ["C11"],
+    "description": "Diagnostic: growing coordination overhead by 50% crowds out value capabilities",
+    "npvImpact": "-$60M",
+    "highlightNodeIds": ["C1", "C4", "C11"],
     "parameterOverrides": [
-      { "nodeId": "C11", "param": "capacity", "value": 0.15 }
+      { "nodeId": "C11", "param": "capacity",   "value": 0.15 },
+      { "nodeId": "C4",  "param": "capacity",   "value": 0.09 },
+      { "nodeId": "C1",  "param": "capacity",   "value": 0.06 }
     ]
   },
   {
     "id": "S8",
     "name": "Mature information architecture",
     "description": "All capabilities shifted to ideal parameters simultaneously",
-    "npvImpact": "+$450M",
-    "highlightNodeIds": ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10"],
+    "npvImpact": "+$327M",
+    "highlightNodeIds": ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C13", "C14"],
     "parameterOverrides": []
   }
 ]

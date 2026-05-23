@@ -26,7 +26,7 @@ describe('Capacity budget rebalancing', () => {
 
     // Locked capabilities should keep their baseline values
     expect(result.get('C2')).toBeCloseTo(0.10, 4);
-    expect(result.get('C3')).toBeCloseTo(0.10, 4);
+    expect(result.get('C3')).toBeCloseTo(0.05, 4);
   });
 
   it('proportional redistribution preserves relative proportions', () => {

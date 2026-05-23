@@ -62,10 +62,10 @@ const VIEWBOX_SIZE = 1100;
 
 // Node sizes
 const NPV_R = 8;
-const VD_R = 5;
-const OM_R = 4;
-const CAP_R = 3;
-const TASK_R = 2;
+const VD_R = 6;
+const OM_R = 5;
+const CAP_R = 4;
+const TASK_R = 3;
 
 // Dark warm background
 const BG_COLOR = '#2a2a30';
@@ -99,8 +99,8 @@ const VALUE_DOWN = '#f87171';  // red
 const VALUE_NEUTRAL = 'rgba(136,204,255,0.8)'; // default blue
 
 // Fixed angles
-const VD_ANGLES = [340, 30, 80, 140, 185, 230, 280];
-const OM_ANGLES = [310, 15, 65, 120, 170, 210, 260];
+const VD_ANGLES = [340, 20, 70, 120, 270, 225, 175];
+const OM_ANGLES = [310, 15, 65, 120, 170, 210, 260, 340];
 
 function valueFill(current: number, baseline: number, hasScenario: boolean): string {
   if (!hasScenario) return VALUE_NEUTRAL;
@@ -112,7 +112,7 @@ function valueFill(current: number, baseline: number, hasScenario: boolean): str
 // Fixed capability angles — ordered by average task angular position
 // to minimize connector crossings (C1→0°, C4→30°, C3→60°, C2→90°, ...)
 const CAP_ANGLES: Record<string, number> = {
-  C1: 0, C2: 90, C3: 60, C4: 30, C5: 120, C6: 150,
+  C1: 0, C14: 15, C4: 30, C3: 60, C13: 75, C2: 90, C5: 120, C6: 150,
   C7: 180, C8: 210, C9: 240, C10: 270, C11: 300, C12: 330,
 };
 

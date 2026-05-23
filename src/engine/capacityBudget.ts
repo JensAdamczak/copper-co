@@ -5,7 +5,7 @@ import type { Network, CapabilityParams } from './types.js';
  *
  * When one capability's capacity changes, others are redistributed proportionally.
  * Locked capabilities are not adjusted. The algorithm is the same as the old
- * per-role time budget, but applied across all 12 capabilities.
+ * per-role time budget, but applied across all 14 capabilities.
  *
  * @param network - The loaded network
  * @param changedId - ID of the capability whose capacity was changed

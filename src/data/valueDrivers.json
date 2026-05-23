@@ -7,7 +7,8 @@
     "noiseSigma": 0.05,
     "parents": [
       { "omId": "OM1", "weight": 0.10 },
-      { "omId": "OM7", "weight": 0.02 }
+      { "omId": "OM7", "weight": 0.02 },
+      { "omId": "OM8", "weight": 0.08 }
     ]
   },
   {
@@ -47,7 +48,8 @@
     "unit": "$M/yr",
     "noiseSigma": 0.8,
     "parents": [
-      { "omId": "OM1", "weight": -0.4 }
+      { "omId": "OM1", "weight": -0.4 },
+      { "omId": "OM8", "weight": -0.25 }
     ]
   },
   {
