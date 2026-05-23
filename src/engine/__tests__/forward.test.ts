@@ -94,8 +94,8 @@ describe('Forward pass', () => {
 
   it('all node states are populated', () => {
     const result = forwardPass(network);
-    // 12 capabilities + 7 OMs + 7 VDs = 26 nodes
-    expect(result.nodeStates.size).toBe(26);
+    // 14 capabilities + 8 OMs + 7 VDs = 29 nodes
+    expect(result.nodeStates.size).toBe(29);
   });
 
   it('custom OM baseline shifts OM value and downstream VD', () => {

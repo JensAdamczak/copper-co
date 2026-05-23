@@ -37,8 +37,8 @@ describe('Sensitivity analysis', () => {
     }
   });
 
-  it('returns 12 results (one per capability)', () => {
+  it('returns 14 results (one per capability)', () => {
     const results = computeSensitivities(network);
-    expect(results.length).toBe(12);
+    expect(results.length).toBe(14);
   });
 });
