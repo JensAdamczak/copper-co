@@ -70,7 +70,7 @@ function getConnectedNodes(selectedId: string, allEdges: Edge[]): Set<string> {
 }
 
 const SCENARIO_DETAILS: Record<string, string> = {
-  S1: 'A machine learning flotation optimizer is deployed on the processing plant. It continuously adjusts reagent dosages, air flow, and cell levels based on real-time feed characteristics.',
+  S1: 'A machine learning optimizer is deployed across the processing plant, managing SAG mill setpoints (feed rate, water addition, power draw) and continuously adjusting flotation reagent dosages, air flow, and cell levels based on real-time feed characteristics.',
   S2: 'ML-assisted grade estimation replaces or augments manual blast hole sampling and geological block modeling.',
   S3: 'Predictive maintenance is introduced for the SAG mill and other constraint equipment. The extra capacity comes from reducing coordination overhead.',
   S4: 'A shared data platform replaces siloed spreadsheets and disconnected systems. Better information flow improves multiple metrics simultaneously.',

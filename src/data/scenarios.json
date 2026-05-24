@@ -1,10 +1,10 @@
 [
   {
     "id": "S1",
-    "name": "Deploy ML flotation optimizer",
-    "description": "ML flotation optimizer boosts recovery yield and reduces variability",
+    "name": "Deploy ML process plant optimizer",
+    "description": "ML optimizer improves mill setpoints and flotation control across the processing plant, boosting throughput and recovery",
     "npvImpact": "+$79M",
-    "highlightNodeIds": ["C1", "C14", "OM3", "VD3"],
+    "highlightNodeIds": ["C1", "C14", "OM3", "OM8", "VD1", "VD3", "VD5"],
     "parameterOverrides": [
       { "nodeId": "C1",  "param": "capacity",   "value": 0.12 },
       { "nodeId": "C1",  "param": "noiseSigma",  "value": 0.04 },
