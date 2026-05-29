@@ -165,6 +165,7 @@ const panelStyles = {
     fontWeight: 500,
     letterSpacing: '0.3px',
     transition: 'background 0.15s',
+    textAlign: 'left',
   } as CSSProperties,
   dot: {
     width: 10,
@@ -703,7 +704,7 @@ export function CircularGraph({
         </div>
 
         {/* Scenario selector panel */}
-        <div style={{ ...panelStyles.container, position: 'relative', left: 'auto', top: 'auto', transform: 'none', pointerEvents: 'auto', overflowY: 'auto', flex: scenariosOpen ? '1 1 0' : '0 0 auto', minHeight: 0 }}>
+        <div style={{ ...panelStyles.container, position: 'relative', left: 'auto', top: 'auto', transform: 'none', pointerEvents: 'auto', flex: scenariosOpen ? '1 1 auto' : '0 0 auto', minHeight: 0 }}>
           <div
             style={{ fontSize: '10px', fontWeight: 600, color: 'rgba(255,255,255,0.6)', padding: '2px 10px', letterSpacing: '0.5px', textTransform: 'uppercase', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
             onClick={() => setScenariosOpen(p => !p)}
@@ -711,7 +712,8 @@ export function CircularGraph({
             Scenarios
             <span style={{ fontSize: '8px', opacity: 0.5 }}>{scenariosOpen ? '\u25B2' : '\u25BC'}</span>
           </div>
-          {scenariosOpen && (<>
+          {scenariosOpen && (
+          <div style={{ overflowY: 'auto', flex: '1 1 0', minHeight: 0, display: 'flex', flexDirection: 'column', gap: '4px' }}><>
             {scenarios.filter(s => !s.isCustom).map((s) => {
               const isActive = activeScenarioId === s.id;
               return (
@@ -778,7 +780,7 @@ export function CircularGraph({
             >
               Reset
             </button>
-          </>)}
+          </></div>)}
         </div>
       </div>
 
